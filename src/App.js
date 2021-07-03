@@ -1,24 +1,30 @@
 import React from 'react';
 import {connect} from 'react-redux'
+import {fetchBlogposts} from './actions/fetchBlogposts'
+import BlogpostsContainer from './containers/BlogpostsContainer'
+
+
+
+
 
 class App extends React.Component {
 
-  // componentDidMount(){
-  //   fetch('http://localhost:3000/api/v1/blog_posts/2', {
-  //     method: 'GET'
-  //   })
-  //   .then(response => response.json())
-  //   .then(data => console.log(data))
-  // }
+    componentDidMount() {
+        this.props.fetchBlogposts()
+    }
 
   render() {
+
     return (
+
       <div className="App">
-        App
+        <BlogpostsContainer />
       </div>
     );
+
   }
+
 }
 
-
-export default App;
+// export default App;
+export default connect(null, {fetchBlogposts})(App)
