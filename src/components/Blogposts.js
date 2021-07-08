@@ -2,7 +2,8 @@
 import React, { Fragment } from 'react'
 // import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
-import { Nav, NavLink,Card,CardBody } from 'reactstrap';
+// import Blogpost from './Blogpost'
+import { Nav, NavLink,Card,CardBody} from 'reactstrap';
 
 
 class Blogposts extends React.Component{
@@ -26,7 +27,7 @@ class Blogposts extends React.Component{
         <Card>
           <CardBody>
             <Nav className="mr-auto" navbar>
-              <NavLink href={`api/v1/blog_posts/${blogpost.id}`}> {blogpost.title} - {blogpost.content} </NavLink>
+              <NavLink href={`/blog_posts/${blogpost.id}`}> {blogpost.title} - {blogpost.content} </NavLink>
             </Nav>
 
 
